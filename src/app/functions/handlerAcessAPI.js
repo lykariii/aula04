@@ -1,6 +1,6 @@
 'use server'
 
-const lista = [
+const user = [
     {
         name: "karen",
         email: "karen@gmail.com",
@@ -37,7 +37,7 @@ const lista = [
 const getUserAuthenticated = (userLogin) => {
     let usermach = [];
 
-    lista.map((user) =>{
+    user.map((user) =>{
     
     if(user.email === userLogin.email && user.password === userLogin.password){
         usermach = user
@@ -48,7 +48,7 @@ const getUserAuthenticated = (userLogin) => {
    }
 
 const getUsers = () =>{
-    return lista
+    return user
         
 }
 export { getUsers, getUserAuthenticated };
