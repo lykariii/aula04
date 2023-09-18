@@ -4,6 +4,7 @@ import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
 import {ToastContainer, toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import './page.css'
 
 export default function Login() {
   const [user, setUser] = useState({
@@ -27,19 +28,22 @@ export default function Login() {
   return (
     <div>
       <h1>Login</h1>
+      <div className="container">
+      <div className='card'>
       <form onSubmit={handlerLogin}>
         <input
           placeholder='E-mail'
           type="email"
           onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
-        </input>
+        </input><br/>
         <input
           placeholder='Senha'
           type='password'
           onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
-        </input>
-        <button>Entrar</button>
+        </input><br/>
+        <button>Login</button>
       </form>
+      </div></div>
       <ToastContainer/>
     </div>
   )
