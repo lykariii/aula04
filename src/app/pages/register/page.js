@@ -2,8 +2,8 @@
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { postUser } from '@/app/functions/handlerAcessAPI';
 import Menu from "@/app/componentes/Menu";
+import { postUser } from '@/app/functions/handlerAcessAPI';
 import { ToastContainer, toast } from 'react-toastify';
 import './page.css'
 
@@ -30,23 +30,23 @@ export default function Register() {
       toast.error('Ocorreu um erro ao cadastrar o usuário.');
     }
   };
-    return (
-        <div>
-            <Menu/>
-      <h1>Register</h1>
-      <div className='container'>
-      <div className='card'>
-      <form onSubmit={handlerFormSubmit}>
-      <input
-          placeholder='Name' type="name" onChange={(e) => { setRegistro({ ...registro, name: e.target.value }) }}/><br/>
-        <input
-          placeholder='E-mail' type="email" onChange={(e) => { setRegistro({ ...registro, email: e.target.value }) }}/><br/>
-        <input
-          placeholder='Password' type='password' onChange={(e) => { setRegistro({ ...registro, password: e.target.value }) }}/><br/>
-        <button>Register</button>
-      </form>
-      </div></div>
-      <ToastContainer/>
-    </div>
-    );
-};
+  return (
+    <div>
+      <Menu/>
+  <h1>Register</h1>
+  <div className='container'>
+  <div className='card'>
+  <form onSubmit={handlerFormSubmit}>
+  <input
+      placeholder='Name' type="name" onChange={(e) => { setRegistro({ ...registro, name: e.target.value }) }}/><br/>
+    <input
+      placeholder='E-mail' type="email" onChange={(e) => { setRegistro({ ...registro, email: e.target.value }) }}/><br/>
+    <input
+      placeholder='Password' type='password' onChange={(e) => { setRegistro({ ...registro, password: e.target.value }) }}/><br/>
+    <button>Register</button>
+  </form>
+  </div></div>
+  <ToastContainer/>
+</div>
+)
+}
